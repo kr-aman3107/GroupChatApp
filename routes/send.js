@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const rootDir = require('../util/path');
+const path = require('path');
 
 const messages = [];
 
@@ -9,11 +11,12 @@ router.get('/', (req, res, next) => {
         messageList += `<li>${msg}</li>`;
     });
     messageList += '</ul>';
-
+    res.sendFile(path.join(rootDir, 'views', 'send.html'));
     res.send(`
         <html>
             <body>
                 <h1>Group Chat</h1>
+                
                 ${messageList}
                 <form action="/" method="POST">
                     <input id="message" name="message" type="text" placeholder="Enter your message" required>

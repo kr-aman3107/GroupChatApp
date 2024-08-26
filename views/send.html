@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <h1 class="header">Group Chat app</h1>
+                    <!-- ${messageList}  -->
+                <form action="/" method="POST">
+                    <input id="message" name="message" type="text" placeholder="Enter your message" required>
+                    <input type="hidden" name="username" id="username">
+                    <button type="submit">Send</button>
+                </form>
+                <script>
+                    
+                    document.getElementById('username').value = localStorage.getItem('username');
+                </script>
+</body>
+</html>
